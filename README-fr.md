@@ -1,5 +1,5 @@
 # Ephpai                     {#mainpage}
-## Une Classe PHP pour intéragir facilement avec l'api d'OpenAI api (ChatGPT & Dall-E)
+## Une Classe PHP pour intéragir facilement avec l'api d'OpenAI (ChatGPT & Dall-E)
 ============
 
 ### MIT License
@@ -23,7 +23,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Ephpai 
+## Classe Ephpai 
 
 Cette Classe PHP permet d'utiliser facilement l'api fournie par Openai php.
 
@@ -37,6 +37,22 @@ Permutation facile de la completion à la génération d'images.
 Gestion de différentes tailles d'image, possibilité de sauvegarder une image. Récupération de l'image à partir du contenu texte encodé au format base64  ou via url. 
 
 * Modération :
-Possibilité de modérer automatiquement des requêtes ou du contenu par l'intermédiaire de l'api. Possibilité d'automatisation de la Modération. Possibilité d'obtenir les raisons pour lesquelles openai a modéré les contenus.
+Possibilité de modérer automatiquement des requêtes ou du contenu par l'intermédiaire de l'api. Possibilité d'automatisation de la Modération. Possibilité d'obtenir les raisons pour lesquelles l'api d'openai a modéré les contenus.
 
+##Comment l'utiliser?
+Cela est fait de manière très simple, il suffit de créer un objetEphpai, d'éxécuter la requête, et de récupérer la réponse.
+Pour utiliser la classe Ephpai, la variable d'environnement OAIPIKEY doit contenir votre api key (conseillé). Si vous n''avez pas accès aux variables d'environnement sur votre serveur, vous pouvez utiliser la méthode setApikey($key).
+Voici un exemple simple :
+```
+<?php
+
+require "Ephpai.php";
+
+$Requestgpt=new Ephpai('Whois is spiderman?'); // Create 
+if (!$Requestgpt->executeQuery())
+     echo ($$Requestgpt->error());
+else
+echo "Result :".$Requestgpt->getTextresult(0);
+
+?>```
 
