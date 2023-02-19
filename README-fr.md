@@ -47,7 +47,7 @@ Cela est fait de manière très simple, il suffit de créer un objet Ephpai, d'�
 
 Pour utiliser la classe Ephpai, la variable d'environnement OAIPIKEY doit contenir votre clé d'api  (conseillé). Si vous n''avez pas accès aux variables d'environnement sur votre serveur, vous pouvez utiliser la méthode setApikey($key).
 
-####Voici un exemple simple :
+####V oici un exemple simple :
 ```
 <?php
 
@@ -62,9 +62,12 @@ echo "Result :".$Requestgpt->getTextresult(0);
 ?>
 ```
 
-Par défaut le type de recherche des défini sur la completion (texte), et le modèle text-davinci-003 (chat gpt).
+Par défaut le type de recherche est défini sur la completion (texte), et le modèle text-davinci-003 (chat gpt).
+
 [A propos des modèles](https://platform.openai.com/docs/models/overview)
+
 Il est possible de le modifier avec la Méthode, ** setModel($model)
+
 Le nombre de tokens est fixé par défaut à 850, il est possible de le modifier via la methode ** setMaxtoken($nombre);
 Exemple de modification de la requete précédente. 
 ```
