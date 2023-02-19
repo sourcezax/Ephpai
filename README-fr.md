@@ -1,7 +1,7 @@
 #Ephpai                     {#mainpage}
 ============
 
-###MIT License
+### MIT License
 Copyright (c) 2023 Thomas Missonier (sourcezaxsourcezax@gmail.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,9 +22,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-##Ephpai 
+## Ephpai 
 
-#Une Classe PHP pour intéragir facilement avec l'api d'OpenAI api (ChatGPT & Dall-E)
+# Une Classe PHP pour intéragir facilement avec l'api d'OpenAI api (ChatGPT & Dall-E)
 
 Cette Classe PHP permet d'utiliser facilement l'api fournie par Openai php.
 
