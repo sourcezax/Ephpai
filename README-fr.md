@@ -1,4 +1,5 @@
-#Ephpai                     {#mainpage}
+# Ephpai                     {#mainpage}
+## Une Classe PHP pour intéragir facilement avec l'api d'OpenAI api (ChatGPT & Dall-E)
 ============
 
 ### MIT License
@@ -24,20 +25,18 @@ SOFTWARE.
 
 ## Ephpai 
 
-# Une Classe PHP pour intéragir facilement avec l'api d'OpenAI api (ChatGPT & Dall-E)
-
 Cette Classe PHP permet d'utiliser facilement l'api fournie par Openai php.
 
 Elle permet,de façon limitée mais simple, d'effectuer des requêtes et d'obtenir des réponses pour les fonctions suivantes :
 
--Completion :
+* Completion :
  Interrogation, réponses et génération de textes. Support des modèles S&,EZ2,DE23. Possibilité de définir le nombre maximum de tokens, gestion fine de la temperature. Export possible sous forme de json, d'array ou de texte.
 
--Génération d'images : 
+* Génération d'images : 
 Permutation facile de la completion à la génération d'images. 
 Gestion de différentes tailles d'image, possibilité de sauvegarder une image. Récupération de l'image à partir du contenu texte encodé au format base64  ou via url. 
 
--Modération :
+* Modération :
 Possibilité de modérer automatiquement des requêtes ou du contenu par l'intermédiaire de l'api. Possibilité d'automatisation de la Modération. Possibilité d'obtenir les raisons pour lesquelles openai a modéré les contenus.
 
 
