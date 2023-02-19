@@ -1,6 +1,8 @@
-# Ephpai                     {#mainpage}
+# Ephpai.php                     
 ## Une Classe PHP pour intéragir facilement avec l'api d'OpenAI (ChatGPT & Dall-E)
 ============
+it’s an unofficial class and This project has no commercial link with Openai.
+In order to use it, you need to have an openai account and valid api key from openai :[Get api key from Openai] (https://openai.com/api/)
 
 ### MIT License
 Copyright (c) 2023 Thomas Missonier (sourcezaxsourcezax@gmail.com)
@@ -44,7 +46,8 @@ Possibilité de modérer automatiquement des requêtes ou du contenu par l'inter
 Cela est fait de manière très simple, il suffit de créer un objetEphpai, d'éxécuter la requête, et de récupérer la réponse.
 
 Pour utiliser la classe Ephpai, la variable d'environnement OAIPIKEY doit contenir votre api key (conseillé). Si vous n''avez pas accès aux variables d'environnement sur votre serveur, vous pouvez utiliser la méthode setApikey($key).
-Voici un exemple simple :
+
+####Voici un exemple simple :
 ```
 <?php
 
@@ -55,6 +58,7 @@ if (!$Requestgpt->executeQuery())
      echo ($$Requestgpt->error());
 else
 echo "Result :".$Requestgpt->getTextresult(0);
-
-?>```
+<!--  -->
+?>
+```
 
