@@ -1,6 +1,6 @@
 # Ephpai.php                     
 ## Une Classe PHP pour intéragir facilement avec l'api d'OpenAI (ChatGPT & Dall-E)
-============
+
 it’s an unofficial class and This project has no commercial link with Openai.
 In order to use it, you need to have an openai account and valid api key from openai :[Get api key from Openai] (https://openai.com/api/)
 
