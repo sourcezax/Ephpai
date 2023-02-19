@@ -39,8 +39,10 @@ Gestion de différentes tailles d'image, possibilité de sauvegarder une image. 
 * Modération :
 Possibilité de modérer automatiquement des requêtes ou du contenu par l'intermédiaire de l'api. Possibilité d'automatisation de la Modération. Possibilité d'obtenir les raisons pour lesquelles l'api d'openai a modéré les contenus.
 
-##Comment l'utiliser?
+## Comment l'utiliser?
+
 Cela est fait de manière très simple, il suffit de créer un objetEphpai, d'éxécuter la requête, et de récupérer la réponse.
+
 Pour utiliser la classe Ephpai, la variable d'environnement OAIPIKEY doit contenir votre api key (conseillé). Si vous n''avez pas accès aux variables d'environnement sur votre serveur, vous pouvez utiliser la méthode setApikey($key).
 Voici un exemple simple :
 ```
