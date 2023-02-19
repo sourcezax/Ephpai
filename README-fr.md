@@ -43,9 +43,9 @@ Possibilité de modérer automatiquement des requêtes ou du contenu par l'inter
 
 ## Comment l'utiliser?
 
-Cela est fait de manière très simple, il suffit de créer un objetEphpai, d'éxécuter la requête, et de récupérer la réponse.
+Cela est fait de manière très simple, il suffit de créer un objet Ephpai, d'éxécuter la requête, et de récupérer la réponse.
 
-Pour utiliser la classe Ephpai, la variable d'environnement OAIPIKEY doit contenir votre api key (conseillé). Si vous n''avez pas accès aux variables d'environnement sur votre serveur, vous pouvez utiliser la méthode setApikey($key).
+Pour utiliser la classe Ephpai, la variable d'environnement OAIPIKEY doit contenir votre clé d'api  (conseillé). Si vous n''avez pas accès aux variables d'environnement sur votre serveur, vous pouvez utiliser la méthode setApikey($key).
 
 ####Voici un exemple simple :
 ```
@@ -53,12 +53,43 @@ Pour utiliser la classe Ephpai, la variable d'environnement OAIPIKEY doit conten
 
 require "Ephpai.php";
 
-$Requestgpt=new Ephpai('Whois is spiderman?'); // Create 
+$Requestgpt=new Ephpai('Whois is spiderman?'); // Create object
 if (!$Requestgpt->executeQuery())
      echo ($$Requestgpt->error());
 else
 echo "Result :".$Requestgpt->getTextresult(0);
-<!--  -->
+
 ?>
 ```
+
+Par défaut le type de recherche des défini sur la completion (texte), et le modèle text-davinci-003 (chat gpt).
+[A propos des modèles](https://platform.openai.com/docs/models/overview)
+Il est possible de le modifier avec la Méthode, ** setModel($model)
+Le nombre de tokens est fixé par défaut à 850, il est possible de le modifier via la methode ** setMaxtoken($nombre);
+Exemple de modification de la requete précédente. 
+```
+<?php require "Ephpai.php";
+
+$Requestgpt=new Ephpai('Whois is spiderman?'); // Create object
+$Requestgpt->setModel('text-curie-001'); //model text-curie
+$Requestgpt->setMaxtoken(200) //Maxtoken=200
+
+if (!$Requestgpt->executeQuery())
+     echo ($$Requestgpt->error());
+else
+echo "Result :".$Requestgpt->getTextresult(0);
+?>
+```
+Il y a un constructeur qui permet de nous faciliter la tâche
+```
+<?php require "Ephpai.php";
+
+$Requestgpt=new Ephpai('Whois is spiderman?','text-curie-001',200); // Create object with model type 'text-curie-001' and maxtoken=200 
+if (!$Requestgpt->executeQuery())
+     echo ($$Requestgpt->error());
+else
+echo "Result :".$Requestgpt->getTextresult(0);
+?>
+```
+
 
