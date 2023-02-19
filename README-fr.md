@@ -66,10 +66,10 @@ Par défaut le type de recherche est défini sur la completion (texte), et le mo
 
 [A propos des modèles](https://platform.openai.com/docs/models/overview)
 
-Il est possible de le modifier avec la Méthode, ** setModel($model)
+Il est possible de le modifier avec la Méthode, **setModel($model)
 
-Le nombre de tokens est fixé par défaut à 850, il est possible de le modifier via la methode ** setMaxtoken($nombre);
-Exemple de modification de la requete précédente. 
+Le nombre de tokens est fixé par défaut à 850, il est possible de le modifier via la methode **setMaxtoken($nombre);
+Exemple de modification de la requête précédente. 
 ```
 <?php require "Ephpai.php";
 
