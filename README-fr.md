@@ -106,7 +106,51 @@ Elles sont documentées dans la documentation, disponible dans le répertoire do
 ## Génération d'images
 
 Pour générer des images en utilisant Dall-E et l'api d'Openai, il faut activer la génération d'image avec la méthode **generateImage(true)**.
-Il est possible de revenir à au mode completion (texte), en lui passant false comme paramètre.
+Il est possible de revenir au mode completion (texte), en lui passant false comme paramètre.
+
+#### Exemple d'affichage d'image en utilisant la librairie GD :
+
+Note : Il est important de n'avoir aucun espace superflu.
+```
+<?php
+header("Content-type: image/jpeg");
+require "../Ephpai.php";
+$Requestgpt=new Ephpai('blue cat');
+$Requestgpt->generateImage(true); //Activate image generation
+if((!$Requestgpt->setImgsize('1024x1024'))||(!$Requestgpt->executeQuery()))
+     die ($Requestgpt->error());
+else
+{
+$imgdata=$Requestgpt->getTextresult(0);
+$image = @imagecreatefromstring($imgdata);
+imagejpeg($image,null, 75);
+//echo $ImageData;
+}
+?>
+``` 
+
+Si vous ne vous voulez pas vous embêter avec les fonctions de la librairie GD, il existe la méthode displayImg($nb,$quality), qui fait tout le travail. 
+
+#### Le même exemple avec l'utilisation de la méthode displayImg :
+```
+<?php
+header("Content-type: image/jpeg");
+require "tomkey.php";
+require "../Ephpai.php";
+$Requestgpt=new Ephpai('blue cat');
+$Requestgpt->setApikey($tomkey);
+$Requestgpt->generateImage(true);//
+if((!$Requestgpt->setImgsize('1024x1024'))||(!$Requestgpt->executeQuery()))
+     die ($Requestgpt->error());
+else
+{
+    if (!$Requestgpt->displayImg(0,100))
+    die ($Requestgpt->error());
+}
+?>
+```
+
+
 
 
 
