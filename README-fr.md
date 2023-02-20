@@ -2,7 +2,8 @@
 ## Une Classe PHP pour intéragir facilement avec l'api d'OpenAI (ChatGPT & Dall-E)
 
 Cette Classe PHP n'est pas une Classe officielle et ce projet n'ai aucun lien commercial avec OpenAi
-Pour pouvoir l'utiliser vous devez disposer d'un compte Openai et d'une clé pour l'api:[Get api key from Openai] (https://openai.com/api/)
+
+Pour pouvoir l'utiliser vous devez disposer d'un compte Openai et d'une clé pour l'api:[Get api key from Openai](https://openai.com/api/)
 
 ### MIT License
 Copyright (c) 2023 Thomas Missonier (sourcezaxsourcezax@gmail.com)
