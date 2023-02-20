@@ -1,7 +1,7 @@
 # Ephpai.php                     
 ## Une Classe PHP pour intéragir facilement avec l'api d'OpenAI (ChatGPT & Dall-E)
 
-Cette Classe PHP n'est pas une Classe officielle et ce projet n'ai aucun lien commercial avec OpenAi
+Cette Classe PHP n'est pas une Classe officielle et ce projet n'ai aucun lien commercial avec OpenAi.
 
 Pour pouvoir l'utiliser vous devez disposer d'un compte Openai et d'une clé pour l'api:[Get api key from Openai](https://openai.com/api/)
 
@@ -69,7 +69,7 @@ Par défaut le type de recherche est défini sur la completion (texte), et le mo
 
 Il est possible de le modifier avec la Méthode, **setModel($model)**
 
-Le nombre de tokens est fixé par défaut à 850, il est possible de le modifier via la methode **setMaxtoken($nombre)**;
+Le nombre de tokens est fixé par défaut à 850, il est possible de le modifier via la méthode **setMaxtoken($nombre)**;
 
 #### Exemple de modification de la requête précédente :
 
@@ -136,10 +136,8 @@ Si vous ne vous voulez pas vous embêter avec les fonctions de la librairie GD, 
 ```
 <?php
 header("Content-type: image/jpeg");
-require "tomkey.php";
 require "../Ephpai.php";
 $Requestgpt=new Ephpai('blue cat');
-$Requestgpt->setApikey($tomkey);
 $Requestgpt->generateImage(true);//
 if((!$Requestgpt->setImgsize('1024x1024'))||(!$Requestgpt->executeQuery()))
      die ($Requestgpt->error());
@@ -147,6 +145,24 @@ else
 {
     if (!$Requestgpt->displayImg(0,100))
     die ($Requestgpt->error());
+}
+?>
+```
+#### de la même manière la méthode saveImgtojpeg($nb,$filename,$quality) permet de sauvegarder l'image sur son serveur :
+```
+<?php
+require "../Ephpai.php";
+$string='donald fishing';
+$Requestgpt=new Ephpai($string);
+$Requestgpt->generateImage(true);//
+if((!$Requestgpt->setImgsize('1024x1024'))||(!$Requestgpt->executeQuery()))
+     die ($Requestgpt->error());
+else
+{
+    if (!$Requestgpt->saveImgtojpeg(0,urlencode($string).'.jpg',100))
+    die ($Requestgpt->error());
+    else 
+    echo 'Image '.urlencode($string).'.jpg saved with success';
 }
 ?>
 ```
