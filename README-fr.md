@@ -3,7 +3,7 @@
 
 Cette Classe PHP n'est pas une Classe officielle et ce projet n'ai aucun lien commercial avec OpenAi.
 
-Pour pouvoir l'utiliser vous devez disposer d'un compte Openai et d'une clé pour l'api:[Get api key from Openai](https://openai.com/api/)
+Pour pouvoir l'utiliser vous devez disposer d'un compte Openai et d'une clé pour l'api : [Get api key from Openai](https://openai.com/api/)
 
 ### MIT License
 Copyright (c) 2023 Thomas Missonier (sourcezaxsourcezax@gmail.com)
@@ -148,11 +148,11 @@ else
 }
 ?>
 ```
-#### de la même manière la méthode saveImgtojpeg($nb,$filename,$quality) permet de sauvegarder l'image sur son serveur :
+#### De la même manière, la méthode saveImgtojpeg($nb,$filename,$quality) permet de sauvegarder l'image sur son serveur :
 ```
 <?php
 require "../Ephpai.php";
-$string='donald fishing';
+$string='blue cat and pink mouse playing card';
 $Requestgpt=new Ephpai($string);
 $Requestgpt->generateImage(true);//
 if((!$Requestgpt->setImgsize('1024x1024'))||(!$Requestgpt->executeQuery()))
@@ -166,6 +166,69 @@ else
 }
 ?>
 ```
+
+**Taille des images** : l'api d'Openai permet un nombre restreint de taille d'image : 256x256,512x512 et 1024x1024.
+
+Pour plus d'informations sur les méthodes liées à la génération d'images, vous trouverez plus d'informations dans la documentation présente dans le répertoire doc.
+
+## Moderation
+
+Il est conseillé d'utiliser l'api de modération fournie par OpenAI afin de ne pas soumettre de requêtes qui pourraient être contraires aux règles d'OpenAI, notamment si vous permettez à vos utilisateurs la possibilité de soumettre du contenu. 
+
+Il est possible de vérifier auprès de l'api, sans effectuer la requête que le contenu est conforme à la modération.
+
+A noter que l'api de modération est valable sur les images et le texte.
+
+Il sagit d'une implémentation fonctionnelle mais limitée de l'usage de la modération. 
+
+S'il est possible de connaître les raisons d'une modération sous forme d'array, les scores respectifs de chaque raisons (valeur numérique) ne sont pas retournés.
+
+
+#### Cet exemple interroge l'api de moderation sur la conformité du texte de la requête. Cette requête devrait être modérée :
+
+```
+<?php
+
+require "tomkey.php";
+require "../Ephpai.php";
+
+$Requestgpt=new Ephpai('I want to hit you. i hate you'); // Create object
+$Requestgpt->setApikey($tomkey);
+//Asks to moderation api to evaluate query.
+if ($Requestgpt-> ModerateQuery()) 
+     //Depending the result, the moderation status will be set to true (moderated) or false (no moderated).
+     if ($Requestgpt->moderation_status())
+        echo "I m moderated";
+     else
+          echo "I m correct";
+     else
+          echo  $Requestgpt->error();
+?>
+```
+
+A noter que la modération fonctionne correctement pour la langue anglaise.
+
+Il est possible de connaitre la ou les raisons de la modération sous forme d'array. Remplacer la ligne dans l'exemple ci-dessus
+
+```
+echo "I m moderated";
+```
+
+par 
+
+```
+ {
+          echo "I m moderated. Reason(s) :";
+          foreach($Requestgpt->moderated_categories() as $reason)
+               echo $reason;
+        }
+```
+
+La méthode moderated_categories() renvoie une array contenant les différentes raisons de la modération.
+
+### Modération automatique
+
+Il est possible de modérer automatiquement les requêtes avant envoi. La methode Moderation_auto($status) permet d'activer cette fonctionnalité.
 
 
 
