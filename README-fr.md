@@ -106,7 +106,7 @@ Elles sont documentées dans la documentation, disponible dans le répertoire do
 
 ## Génération d'images
 
-Pour générer des images en utilisant Dall-E et l'api d'Openai, il faut activer la génération d'image avec la méthode **generateImage(true)**.
+Pour générer des images en utilisant Dall-E et l'api d'OpenAI, il faut activer la génération d'image avec la méthode **generateImage(true)**.
 Il est possible de revenir au mode completion (texte), en lui passant false comme paramètre.
 
 #### Exemple d'affichage d'image en utilisant la librairie GD :
@@ -130,7 +130,7 @@ imagejpeg($image,null, 75);
 ?>
 ``` 
 
-Si vous ne vous voulez pas vous embêter avec les fonctions de la librairie GD, il existe la méthode displayImg($nb,$quality), qui fait tout le travail. 
+Si vous ne vous voulez pas vous embêter avec les fonctions de la librairie GD, il existe la méthode **displayImg($nb,$quality)**, qui fait tout le travail. 
 
 #### Le même exemple avec l'utilisation de la méthode displayImg :
 ```
