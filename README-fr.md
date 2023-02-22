@@ -3,7 +3,7 @@
 
 Cette Classe PHP n'est pas une Classe officielle et ce projet n'a aucun lien commercial avec OpenAI.
 
-Pour pouvoir l'utiliser vous devez disposer d'un compte Openai et d'une clé pour l'api : [Get api key from Openai](https://openai.com/api/)
+Pour pouvoir l'utiliser vous devez disposer d'un compte Openai et d'une clé pour l'api : [Get api key from OpenAI](https://openai.com/api/)
 
 ### MIT License
 Copyright (c) 2023 Thomas Missonier (sourcezaxsourcezax@gmail.com)
@@ -54,13 +54,18 @@ Pour utiliser la classe Ephpai, la variable d'environnement OAIPIKEY doit conten
 
 require "Ephpai.php";
 
-$Requestgpt=new Ephpai('Whois is spiderman?'); // Create object
+$Requestgpt=new Ephpai('Who is Spiderman?'); // Create object
 if (!$Requestgpt->executeQuery())
      echo ($$Requestgpt->error());
 else
 echo "Result :".$Requestgpt->getTextresult(0);
 
 ?>
+```
+
+Voici un exemple de réponse :
+```
+Result : Spider-Man is a Marvel Comics superhero created by Stan Lee and Steve Ditko in 1962. He is a costumed crime fighter with superhuman strength, agility, and the ability to cling to most surfaces. He uses his powers to protect the innocent and fight crime in New York City.
 ```
 
 Par défaut le type de recherche est défini sur la completion (texte), et le modèle text-davinci-003 (chat gpt).
@@ -76,7 +81,7 @@ Le nombre de tokens est fixé par défaut à 850, il est possible de le modifier
 ```
 <?php require "Ephpai.php";
 
-$Requestgpt=new Ephpai('Whois is spiderman?'); // Create object
+$Requestgpt=new Ephpai('Who is Spiderman?'); // Create object
 $Requestgpt->setModel('text-curie-001'); //model text-curie
 $Requestgpt->setMaxtoken(200); //Maxtoken=200
 
@@ -86,13 +91,18 @@ else
 echo "Result :".$Requestgpt->getTextresult(0);
 ?>
 ```
+Exemple de réponse :
+
+```
+Result : Spiderman is a superhero who first appeared in the comic book series "Amazing Fantasy" in 1962. He is known for his webshooters, Spiderman suits, and his ability to climb walls.
+```
 
 Il y a un constructeur qui accepte le modèle et maxtoken en paramètres et permet de nous faciliter la tâche :
 
 ```
 <?php require "Ephpai.php";
 
-$Requestgpt=new Ephpai('Whois is spiderman?','text-curie-001',200); // Create object with model type 'text-curie-001' and maxtoken=200 
+$Requestgpt=new Ephpai('Who is spiderman?','text-curie-001',200); // Create object with model type 'text-curie-001' and maxtoken=200 
 if (!$Requestgpt->executeQuery())
      echo ($$Requestgpt->error());
 else
@@ -110,6 +120,7 @@ Pour générer des images en utilisant Dall-E et l'api d'OpenAI, il faut activer
 Il est possible de revenir au mode completion (texte), en lui passant false comme paramètre.
 
 #### Exemple d'affichage d'image en utilisant la librairie GD :
+Dans cet exemple nous générons une image de chat bleu. L'exemple est volontairement simpliste.
 
 Note : Il est important de n'avoir aucun espace superflu.
 ```
@@ -149,6 +160,9 @@ else
 ?>
 ```
 #### De la même manière, la méthode **saveImgtojpeg($nb,$filename,$quality)** permet de sauvegarder l'image sur son serveur :
+
+Cette fois ci, le theme de l'image sera "un chat bleu et une souris rose jouant au cartes" d'une dimension de 1024x1024, qui sera sauvée sur le serveur
+Note : Il aurait pu être possible de l'afficher aussi en utilisant la methode **displayImg** (voir ci-dessus).
 ```
 <?php
 require "../Ephpai.php";
@@ -198,9 +212,9 @@ $Requestgpt->setApikey($tomkey);
 if ($Requestgpt-> ModerateQuery()) 
      //Depending the result, the moderation status will be set to true (moderated) or false (no moderated).
      if ($Requestgpt->moderation_status())
-        echo "I m moderated";
+        echo "I'm moderated";
      else
-          echo "I m correct";
+          echo "I'm correct";
      else
           echo  $Requestgpt->error();
 ?>
@@ -211,14 +225,14 @@ A noter que la modération fonctionne correctement pour la langue anglaise,et ap
 Il est possible de connaitre la ou les raisons de la modération sous forme d'array. Remplacer la ligne dans l'exemple ci-dessus
 
 ```
-echo "I m moderated";
+echo "I'm moderated";
 ```
 
 par 
 
 ```
  {
-          echo "I m moderated. Reason(s) :";
+          echo "I'm moderated. Reason(s) :";
           foreach($Requestgpt->moderated_categories() as $reason)
                echo $reason;
         }
@@ -252,7 +266,9 @@ echo "Result :".$Requestgpt->getTextresult(0);
 
 Une documentation au format HTML se trouve dans le répertoire doc.
 
-J'espère que ce code pourra vous être utile. N'hésitez pas à me contacter pour me montrer vos réalisations :)
+J'espère que ce code pourra vous être utile. 
+
+N'hésitez pas à me contacter pour me montrer vos réalisations :)
 
 
 
