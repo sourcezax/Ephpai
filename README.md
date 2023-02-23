@@ -269,7 +269,7 @@ echo "Result :".$Requestgpt->getTextresult(0);
 ?>
 ```
 
-**Thanks for reading
+## Thanks for reading
 
 I hope this code can be useful for you.
 
