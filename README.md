@@ -165,7 +165,7 @@ else
 }
 ?>
 ```
-**In the same way, the **saveImgtojpeg($nb,$filename,$quality)** allows to save image on your server in jpeg format.
+## In the same way, the **saveImgtojpeg($nb,$filename,$quality)** allows to save image on your server in jpeg format.
 
 ```
 <?php
