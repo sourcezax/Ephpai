@@ -2,7 +2,7 @@
 
 ## A PHP Class to easily interact with the OpenAI API (ChatGPT & Dall-E)
 
-============
+
 
 it’s an unofficial class and This project has no commercial link with OpenAI.
 
