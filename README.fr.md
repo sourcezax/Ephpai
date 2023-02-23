@@ -137,7 +137,6 @@ else
 $imgdata=$Requestgpt->getTextresult(0);
 $image = @imagecreatefromstring($imgdata);
 imagejpeg($image,null, 75);
-//echo $ImageData;
 }
 ?>
 ``` 

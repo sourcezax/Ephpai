@@ -59,7 +59,7 @@ In order to use the Ephpai class, the OAIPIKEY environment variable must contain
 
 require "Ephpai.php";
 
-$Requestgpt=new Ephpai('Whois is spiderman?'); // Create object
+$Requestgpt=new Ephpai('Who is Spiderman?'); // Create object
 if (!$Requestgpt->executeQuery())
      echo ($$Requestgpt->error());
 else
@@ -84,7 +84,7 @@ The number of tokens is fixed by default at 850, it can be changed with the meth
 ```
 <?php require "Ephpai.php";
 
-$Requestgpt=new Ephpai('Who is spiderman?'); // Create object
+$Requestgpt=new Ephpai('Who is Spiderman?'); // Create object
 $Requestgpt->setModel('text-curie-001'); //model text-curie
 $Requestgpt->setMaxtoken(200); //Maxtoken=200
 
@@ -105,7 +105,7 @@ There is a constructor with the model and maxtoken as parameters and allows us t
 ```
 <?php require "Ephpai.php";
 
-$Requestgpt=new Ephpai('Whois is spiderman?','text-curie-001',200); // Create object with model type 'text-curie-001' and maxtoken=200 
+$Requestgpt=new Ephpai('Who is Spiderman?','text-curie-001',200); // Create object with model type 'text-curie-001' and maxtoken=200 
 if (!$Requestgpt->executeQuery())
      echo ($$Requestgpt->error());
 else
@@ -142,7 +142,6 @@ else
 $imgdata=$Requestgpt->getTextresult(0);
 $image = @imagecreatefromstring($imgdata);
 imagejpeg($image,null, 75);
-//echo $ImageData;
 }
 ?>
 ``` 
