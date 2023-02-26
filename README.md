@@ -9,7 +9,7 @@ it’s an unofficial class and This project has no commercial link with OpenAI.
 In order to use it, you need to have an OpenAI account and valid api key from OpenAI :[Get api key from OpenAI] (https://openai.com/api/)
 
 ### MIT License
-Copyright (c) 2023 Thomas Missonier (sourcezaxsourcezax@gmail.com)
+Copyright (c) 2023 Thomas Missonier (https://github.com/sourcezax)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
