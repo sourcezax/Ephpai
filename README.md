@@ -70,8 +70,9 @@ echo "Result :".$Requestgpt->getTextresult(0);
 
 ### Update : Setting the apikey with the setApikey method.
 
-If you don't have the OAIPIKEY, you cant set it by using the php putenv() function : putenv("OAIPIKEY=yourkey");
-You can use the setApikey($key) methode, who do the same thing. 
+If you don't have the OAIPIKEY environment variable, you can set it by using the php putenv() function : putenv("OAIPIKEY=yourkey");
+
+You can use the setApikey($key) method, who do the same thing. 
 
 ### The same Example with using the setApikey() method.
 
@@ -168,7 +169,8 @@ imagejpeg($image,null, 75);
 ?>
 ``` 
 
-Example of result (512x512 image)
+### Example of result (512x512 image)
+
 ![Blue cat](examples/blue+cat.jpg)
 
 
