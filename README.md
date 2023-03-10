@@ -8,7 +8,7 @@ it’s an unofficial class and this project has no commercial link with OpenAI.
 
 In order to use it, you need to have an OpenAI account and valid api key from OpenAI :
 
-[Get api key from OpenAI] (https://openai.com/api/)
+[Get api key from OpenAI](https://openai.com/api/)
 
 ### MIT License
 Copyright (c) 2023 Thomas Missonier (sourcezaxsourcezax@gmail.com)
