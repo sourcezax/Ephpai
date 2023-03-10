@@ -9,7 +9,7 @@ it’s an unofficial class and This project has no commercial link with OpenAI.
 In order to use it, you need to have an OpenAI account and valid api key from OpenAI :[Get api key from OpenAI] (https://openai.com/api/)
 
 ### MIT License
-Copyright (c) 2023 Thomas Missonier (https://github.com/sourcezax)
+Copyright (c) 2023 Thomas Missonier (sourcezaxsourcezax@gmail.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -60,6 +60,28 @@ In order to use the Ephpai class, the OAIPIKEY environment variable must contain
 require "Ephpai.php";
 
 $Requestgpt=new Ephpai('Who is Spiderman?'); // Create object
+if (!$Requestgpt->executeQuery())
+     echo ($$Requestgpt->error());
+else
+echo "Result :".$Requestgpt->getTextresult(0);
+
+?>
+```
+
+### Update : Setting the apikey with the setApikey method.
+
+If you don't have the OAIPIKEY, you cant set it by using the php putenv() function : putenv("OAIPIKEY=yourkey");
+You can use the setApikey($key) methode, who do the same thing. 
+
+### The same Example with using the setApikey() method.
+
+```
+php
+
+require "Ephpai.php";
+$apikey='putyourapikeyhere';
+$Requestgpt=new Ephpai('Who is Spiderman?'); // Create object
+$Requestgpt->setApikey($apikey);
 if (!$Requestgpt->executeQuery())
      echo ($$Requestgpt->error());
 else
@@ -145,6 +167,10 @@ imagejpeg($image,null, 75);
 }
 ?>
 ``` 
+
+Example of result (512x512 image)
+![Blue cat](examples/blue+cat.jpg)
+
 
 If you don't want to bother with functions from the GD library, there is the **displayImg($nb,$quality)** method, which does all the work.
 
